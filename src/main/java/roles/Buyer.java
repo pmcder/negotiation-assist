@@ -1,17 +1,23 @@
 package roles;
 
-public class Buyer extends Role {
+public class Seller extends Role {
 
-  public Buyer(int limit) {
+  public Seller(int limit) {
     super(limit);
-    // TODO Auto-generated constructor stub
   }
 
   @Override
   public void move(double opposingCurrent, double opposingLast) {
-    // TODO Auto-generated method stub
+    if (opposingCurrent == opposingLast) {
+      this.next = (int) (opposingCurrent * .20); 
+    }
     
+    else {
+      this.next = ((opposingCurrent/opposingLast) * this.current);
+    }
   }
+
+
 
 
 
