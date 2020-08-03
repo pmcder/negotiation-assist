@@ -4,20 +4,22 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class SellerTest {
+public class BuyerTest {
 
   @Test
   public void openingMoveTest() {
-    Role testSeller = new Seller(0);
-    testSeller.move(100, 100);
-    assertEquals(20, testSeller.getNext());
+    Role testBuyer = new Buyer(0);
+    testBuyer.move(100, 100);
+    assertEquals(20, testBuyer.getNext());
   }
   
   @Test
   public void subsequentMoveTest() {
-    Role testSeller = new Seller(0);
-    testSeller.setCurrent(10);
-    testSeller.move(75, 100);
-    assertEquals(7, testSeller.getNext());
+    Role testBuyer = new Buyer(0);
+    testBuyer.setCurrent(10);
+    testBuyer.move(75, 100);
+    assertEquals(7, testBuyer.getNext());
   }
+  
+  
 }

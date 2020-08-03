@@ -1,8 +1,8 @@
 package roles;
 
-public class Seller extends Role {
+public class Buyer extends Role {
 
-  public Seller(int limit) {
+  public Buyer(int limit) {
     super(limit);
   }
 
@@ -16,9 +16,4 @@ public class Seller extends Role {
       this.next = ((opposingCurrent/opposingLast) * this.current);
     }
   }
-
-
-
-
-
 }

@@ -1,8 +1,8 @@
 package roles;
 
-public class Buyer extends Role {
+public class Seller extends Role {
 
-  public Buyer(int limit) {
+  public Seller(int limit) {
     super(limit);
     // TODO Auto-generated constructor stub
   }
