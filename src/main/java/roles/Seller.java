@@ -9,10 +9,8 @@ public class Seller extends Role {
 
   @Override
   public void move(double opposingCurrent, double opposingLast) {
-    // TODO Auto-generated method stub
-    
+    // TODO add multiplier here to adjust algorithm ?
+    this.next = this.current - (((opposingCurrent - opposingLast) / opposingLast) * this.current);
   }
-
-
 
 }
