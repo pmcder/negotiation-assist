@@ -1,6 +1,6 @@
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+
 import org.apache.log4j.Logger;
 // import org.apache.log4j.PropertyConfigurator;
 
@@ -23,7 +23,7 @@ public class Main {
     // Let us create an object of the Main class.
     Main m = new Main();
 
-    logger.info(m.doIt());
+   
 
     logger.trace("Trace Message!");
     logger.debug("Debug Message!");
@@ -36,9 +36,6 @@ public class Main {
 
 
 
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getLastName();
-  }
+
 
 }
