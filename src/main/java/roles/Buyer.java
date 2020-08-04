@@ -6,8 +6,6 @@ public class Buyer extends Role {
    * Represents the buyer in a transaction. The buyer is seeking the lowest price
    * from the Seller.
    * 
-   * 
-   * @param limit
    */
   public Buyer(int limit) {
     super(limit);

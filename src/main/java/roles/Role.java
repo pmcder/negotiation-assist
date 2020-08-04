@@ -20,10 +20,8 @@ public abstract class Role {
   }
 
   /**
-   * 
-   * @param opposingCurrent
-   * @param opposingLast    Determines how Role object will adjust next
-   *                        offer/demand.
+   * Determines what next offer amount should
+   * be suggested to the user.     
    */
   public abstract void move(double opposingCurrent, double opposingLast);
 
