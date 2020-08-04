@@ -18,7 +18,15 @@ public class BuyerTest {
     Role testBuyer = new Buyer(0);
     testBuyer.setCurrent(10);
     testBuyer.move(75, 100);
-    assertEquals(7, testBuyer.getNext());
+    assertEquals(13, testBuyer.getNext());
+  }
+  
+  @Test
+  public void subsequentMoveTest2() {
+    Role testBuyer = new Buyer(0);
+    testBuyer.setCurrent(1000);
+    testBuyer.move(4500, 5000);
+    assertEquals(1111, testBuyer.getNext());
   }
   
   

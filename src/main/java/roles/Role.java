@@ -12,8 +12,11 @@ public abstract class Role {
 
   protected double next; // what next move should be
 
+  protected boolean limitReached; // returns true when opposing current reaches limit
+
   public Role(int limit) {
     this.limit = limit;
+    this.limitReached = false;
   }
 
   /**
@@ -30,6 +33,14 @@ public abstract class Role {
 
   public void setLimit(int limit) {
     this.limit = limit;
+  }
+
+  public boolean isLimitReached() {
+    return limitReached;
+  }
+
+  public void setLimitReached(boolean limitReached) {
+    this.limitReached = limitReached;
   }
 
   public int getCurrent() {
