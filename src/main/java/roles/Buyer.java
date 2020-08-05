@@ -13,9 +13,8 @@ public class Buyer extends Role {
 
   @Override
   public void move(double opposingCurrent, double opposingLast) {
-    // cast to int as fields should always be whole numbers
-    if (opposingCurrent == opposingLast) {
-      this.next = (int) (opposingCurrent * .20);
+    if (opposingCurrent == opposingLast) { //checks to see if opening offer
+      this.next = (int) (opposingCurrent * .20); // cast to int as fields should always be whole numbers
     } 
     else {
       // TODO add multiplier here to adjust algorithm ?
