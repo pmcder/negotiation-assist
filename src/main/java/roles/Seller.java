@@ -2,8 +2,8 @@ package roles;
 
 public class Seller extends Role {
 
-  public Seller(int limit) {
-    super(limit);
+  public Seller() {
+    super();
   }
 
   @Override

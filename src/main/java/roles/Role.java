@@ -14,16 +14,22 @@ public abstract class Role {
 
   protected boolean limitReached; // returns true when opposing current reaches limit
 
-  public Role(int limit) {
-    this.limit = limit;
+  public Role() {
     this.limitReached = false;
   }
 
+ 
   /**
-   * Determines what next offer amount should be suggested to the user.
+   * Calculates optimal value of next move and updates next field.
+   * @param opposingCurrent counterparty's current offer. 
+   * @param opposingLast counterparty's last offer. 
    */
   public abstract void move(double opposingCurrent, double opposingLast);
 
+  /**
+   * Indicates if limit is a max or min. 
+   * @return if limit type for this object is high or low.
+   */
   public abstract String getLimitType();
 
   public int getLimit() {
@@ -34,7 +40,7 @@ public abstract class Role {
     this.limit = limit;
   }
 
-  public boolean isLimitReached() {
+  public boolean getLimitReached() {
     return limitReached;
   }
 

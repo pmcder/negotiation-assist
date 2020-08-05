@@ -7,8 +7,8 @@ public class Buyer extends Role {
    * from the Seller.
    * 
    */
-  public Buyer(int limit) {
-    super(limit);
+  public Buyer() {
+    super();
   }
 
   @Override
