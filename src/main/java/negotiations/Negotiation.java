@@ -1,6 +1,6 @@
 package negotiations;
 
-import javax.management.relation.Role;
+import roles.Role;
 
 public class Negotiation {
   
@@ -24,6 +24,4 @@ public class Negotiation {
 
   
   
-  
-
 }

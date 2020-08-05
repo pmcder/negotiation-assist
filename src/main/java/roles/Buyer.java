@@ -23,4 +23,9 @@ public class Buyer extends Role {
       this.next = ((opposingLast / opposingCurrent) * this.current);
     }
   }
+
+  @Override
+  public String getLimitType() {
+    return "highest";
+  }
 }

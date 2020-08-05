@@ -20,10 +20,11 @@ public abstract class Role {
   }
 
   /**
-   * Determines what next offer amount should
-   * be suggested to the user.     
+   * Determines what next offer amount should be suggested to the user.
    */
   public abstract void move(double opposingCurrent, double opposingLast);
+
+  public abstract String getLimitType();
 
   public int getLimit() {
     return limit;
@@ -56,4 +57,5 @@ public abstract class Role {
   public void setNext(int next) {
     this.next = next;
   }
+
 }

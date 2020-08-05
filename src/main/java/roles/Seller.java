@@ -4,7 +4,6 @@ public class Seller extends Role {
 
   public Seller(int limit) {
     super(limit);
-    // TODO Auto-generated constructor stub
   }
 
   @Override
@@ -13,4 +12,8 @@ public class Seller extends Role {
     this.next = this.current - (((opposingCurrent - opposingLast) / opposingLast) * this.current);
   }
 
+  @Override
+  public String getLimitType() {
+    return "lowest";
+  }
 }
