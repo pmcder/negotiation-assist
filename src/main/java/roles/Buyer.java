@@ -18,8 +18,7 @@ public class Buyer extends Role {
       this.current = (int) (opposingCurrent * .20); // cast to int as fields should always be whole numbers
       this.volleyCount++;
     } else {
-      // TODO add multiplier here to adjust algorithm ?
-      this.current = ((this.opposingLast / opposingCurrent) * this.current);
+      this.current = (this.current+(opposingCurrent/this.opposingLast) * this.current);
       this.volleyCount++;
       if (this.current >= this.limit) {
         this.limitReached = true;
