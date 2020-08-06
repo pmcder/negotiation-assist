@@ -13,6 +13,10 @@ public abstract class Role {
   protected double next; // what next move should be
 
   protected boolean limitReached; // returns true when opposing current reaches limit
+  
+  protected int volleyCount;
+  
+  protected double opposingLast;
 
   public Role() {
     this.limitReached = false;
@@ -22,9 +26,8 @@ public abstract class Role {
   /**
    * Calculates optimal value of next move and updates next field.
    * @param opposingCurrent counterparty's current offer. 
-   * @param opposingLast counterparty's last offer. 
    */
-  public abstract void move(double opposingCurrent, double opposingLast);
+  public abstract void move(double opposingCurrent);
 
   /**
    * Indicates if limit is a max or min. 
@@ -62,6 +65,14 @@ public abstract class Role {
 
   public void setNext(int next) {
     this.next = next;
+  }
+  
+  public double getOpposingLast() {
+    return opposingLast;
+  }
+  
+  public void setOpposingLast(double opposingLast) {
+    this.opposingLast = opposingLast;
   }
 
 }
