@@ -13,12 +13,11 @@ public class Buyer extends Role {
 
   @Override
   public void move(double opposingCurrent) {
-    if (this.volleyCount==0) { //checks to see if opening offer
+    if (this.volleyCount == 0) { // checks to see if opening offer
       this.opposingLast = opposingCurrent;
       this.current = (int) (opposingCurrent * .20); // cast to int as fields should always be whole numbers
       this.volleyCount++;
-    } 
-    else {
+    } else {
       // TODO add multiplier here to adjust algorithm ?
       this.current = ((this.opposingLast / opposingCurrent) * this.current);
       this.volleyCount++;
