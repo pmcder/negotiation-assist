@@ -39,8 +39,10 @@ public class Main {
     System.out.printf("Negotiating will stop when you reach %d \n", user.getLimit());
 
     while (!(user.getLimitReached())) {
-      System.out.println("Enter counterparty amount: ");
+      System.out.println("\nEnter counterparty amount: ");
       user.move(sc.nextInt());
+      System.out.printf("You should move to %d",user.getCurrent());
     }
+    System.out.println("\nlimit reached !!!");
   }
 }

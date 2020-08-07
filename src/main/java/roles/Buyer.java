@@ -16,10 +16,13 @@ public class Buyer extends Role {
     if (this.volleyCount == 0) { // checks to see if opening offer
       this.opposingLast = opposingCurrent;
       this.current = (int) (opposingCurrent * .20); // cast to int as fields should always be whole numbers
+      this.initial = this.current;
+      this.opposingInitial = opposingCurrent;
       this.volleyCount++;
     } else {
-      this.current = (this.current+(opposingCurrent/this.opposingLast) * this.current);
+      this.current = (this.current + ((opposingLast-opposingCurrent)/this.opposingLast) * this.current);
       this.volleyCount++;
+      this.opposingLast = opposingCurrent;
       if (this.current >= this.limit) {
         this.limitReached = true;
       }

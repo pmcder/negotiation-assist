@@ -20,16 +20,15 @@ public class BuyerTest {
   public void subsequentMoveTest() {
     Role testBuyer = new Buyer();
     testBuyer.move(1000);
-    logger.fatal(testBuyer.getCurrent());
     testBuyer.move(750);
     logger.fatal(testBuyer.getCurrent());
-    assertEquals(350, testBuyer.getCurrent());
+    assertEquals(250, testBuyer.getCurrent());
   }
     
   @Test
   public void limitReachedTest() {
     Role testBuyer = new Buyer();
-    testBuyer.setLimit(340);
+    testBuyer.setLimit(240);
     testBuyer.move(1000);
     logger.fatal(testBuyer.getCurrent());
     testBuyer.move(750);
@@ -40,7 +39,7 @@ public class BuyerTest {
   @Test
   public void limitNotReachedTest() {
     Role testBuyer = new Buyer();
-    testBuyer.setLimit(360);
+    testBuyer.setLimit(300);
     testBuyer.move(1000);
     logger.fatal(testBuyer.getCurrent());
     testBuyer.move(750);
