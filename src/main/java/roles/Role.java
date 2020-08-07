@@ -1,5 +1,7 @@
 package roles;
 
+import memento.RoleMemento;
+
 public abstract class Role {
 
   /**
@@ -85,5 +87,22 @@ public abstract class Role {
   public void setOpposingInitial(double opposingInitial) {
     this.opposingInitial = opposingInitial;
   }
+  
+  public RoleMemento setMemento() {
+    RoleMemento roleMemento = new RoleMemento(this.limit, this.current, this.limitReached, this.volleyCount, this.opposingLast, this.initial, this.opposingInitial);
+    return roleMemento;
+  }
+  
+  public void undo(RoleMemento roleMemento) {
+    this.limit = roleMemento.getLimit();
+    this.current = roleMemento.getCurrent();
+    this.limitReached = roleMemento.isLimitReached();
+    this.volleyCount = roleMemento.getVolleyCount();
+    this.opposingLast = roleMemento.getOpposingLast();
+    this.initial = roleMemento.getInitial();
+    this.opposingInitial = roleMemento.getOpposingInitial();
+  }
+  
+  
 
 }

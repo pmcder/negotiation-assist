@@ -34,10 +34,18 @@ public class Main {
      */
     user = rf.getRole(sc.nextInt());
 
+    /*
+     * Prompts user to input the max if buyer or min if seller that they are willing to accept.
+     */
     System.out.printf("Please enter the %s price you are willing to accept ", user.getLimitType());
     user.setLimit(sc.nextInt());
     System.out.printf("Negotiating will stop when you reach %d \n", user.getLimit());
 
+    /*
+     * Negotiating loop prompts user to input counterparty amount
+     * and returns suggested move to user.
+     * Loop breaks when user is advised when limit is reached. 
+     */
     while (!(user.getLimitReached())) {
       System.out.println("\nEnter counterparty amount: ");
       user.move(sc.nextInt());
