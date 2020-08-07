@@ -41,7 +41,7 @@ public class Main {
     while (!(user.getLimitReached())) {
       System.out.println("\nEnter counterparty amount: ");
       user.move(sc.nextInt());
-      System.out.printf("You should move to %d",user.getCurrent());
+      System.out.printf("You should move to %d", user.getCurrent());
     }
     System.out.println("\nlimit reached !!!");
   }

@@ -10,6 +10,7 @@ public class RoleFactory {
 
   /**
    * Returns 1 for Buyer and 2 for Seller.
+   * 
    * @param i 1 returns a Buyer and 2 returns a Seller.
    * @return a Role object instantiated to a Buyer or Seller.
    */

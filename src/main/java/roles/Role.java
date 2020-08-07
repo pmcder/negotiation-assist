@@ -12,11 +12,11 @@ public abstract class Role {
 
   protected boolean limitReached; // returns true when opposing current reaches limit
 
-  protected int volleyCount; //stores number of moves made
+  protected int volleyCount; // stores number of moves made
 
-  protected double opposingLast; //last move by other opposing role
-  
-  protected double initial; //starting move amount 
+  protected double opposingLast; // last move by other opposing role
+
+  protected double initial; // starting move amount
 
   protected double opposingInitial;
 
@@ -69,7 +69,7 @@ public abstract class Role {
   public void setOpposingLast(double opposingLast) {
     this.opposingLast = opposingLast;
   }
-  
+
   public double getInitial() {
     return initial;
   }
@@ -77,7 +77,7 @@ public abstract class Role {
   public void setInitial(double initial) {
     this.initial = initial;
   }
-  
+
   public double getOpposingInitial() {
     return opposingInitial;
   }

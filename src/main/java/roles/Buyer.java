@@ -20,7 +20,7 @@ public class Buyer extends Role {
       this.opposingInitial = opposingCurrent;
       this.volleyCount++;
     } else {
-      this.current = (this.current + ((opposingLast-opposingCurrent)/this.opposingLast) * this.current);
+      this.current = (this.current + ((opposingLast - opposingCurrent) / this.opposingLast) * this.current);
       this.volleyCount++;
       this.opposingLast = opposingCurrent;
       if (this.current >= this.limit) {
