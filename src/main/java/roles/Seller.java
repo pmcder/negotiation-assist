@@ -13,8 +13,9 @@ public class Seller extends Role {
       this.opposingLast = opposingCurrent;
       this.volleyCount++;
     } else {
-      this.current = this.current - (((opposingCurrent - this.opposingLast) / this.opposingLast) * this.current);
+      this.current = this.current - (((opposingCurrent - this.opposingLast) / opposingCurrent) * this.current);
       this.volleyCount++;
+      this.opposingLast = opposingCurrent;
       if (this.current <= this.limit) {
         this.limitReached = true;
       }

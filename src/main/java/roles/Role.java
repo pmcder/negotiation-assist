@@ -93,6 +93,10 @@ public abstract class Role {
     return roleMemento;
   }
   
+  /**
+   * Restores role state to a previous state.
+   * @param roleMemento memento object to restore role state to.
+   */
   public void undo(RoleMemento roleMemento) {
     this.limit = roleMemento.getLimit();
     this.current = roleMemento.getCurrent();

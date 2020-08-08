@@ -17,7 +17,6 @@ public class RoleMemento {
   private double opposingInitial;
 
   /**
-   * 
    * Holds the state of a role object.
    */
   public RoleMemento(int limit, double current, boolean limitReached, int volleyCount, double opposingLast,
