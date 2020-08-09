@@ -11,6 +11,7 @@ public class CareTaker {
   }
   
   public RoleMemento getLastMemento() {
+    //TODO add exception for empty?
     return this.mementoStack.pop();
   }
 
