@@ -1,18 +1,22 @@
 package roles;
 
+
+
 public class Buyer extends Role {
 
   /**
    * Represents the buyer in a transaction. The buyer is seeking the lowest price
    * from the Seller.
-   * 
    */
   public Buyer() {
     super();
   }
 
   @Override
-  public void move(double opposingCurrent) {
+  public void move(double opposingCurrent) throws InvalidAmountException {
+    if (opposingCurrent < 1) {
+      throw new InvalidAmountException();
+    }
     if (this.volleyCount == 0) { // checks to see if opening offer
       this.opposingLast = opposingCurrent;
       // cast to int as fields should always be whole numbers

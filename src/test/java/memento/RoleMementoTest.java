@@ -10,7 +10,7 @@ import roles.Role;
 public class RoleMementoTest {
 
   @Test
-  public void testUndo() {
+  public void testUndo() throws Exception {
     Role testBuyer = new Buyer();
     CareTaker careTaker = new CareTaker();
     testBuyer.move(20000);
@@ -23,7 +23,7 @@ public class RoleMementoTest {
   }
   
   @Test
-  public void testNotUndo() {
+  public void testNotUndo() throws Exception {
     Role testBuyer = new Buyer();
     CareTaker careTaker = new CareTaker();
     testBuyer.move(20000);

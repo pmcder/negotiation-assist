@@ -1,53 +1,53 @@
 package roles;
 
 import static org.junit.Assert.*;
-
-import org.apache.log4j.Logger;
 import org.junit.Test;
 
 public class BuyerTest {
-  
-  private static Logger logger = Logger.getLogger(BuyerTest.class);
 
   @Test
-  public void openingMoveTest() {
+  public void openingMoveTest() throws InvalidAmountException {
     Role testBuyer = new Buyer();
     testBuyer.move(1000);
     assertEquals(200, testBuyer.getCurrent());
   }
-  
+
   @Test
-  public void subsequentMoveTest() {
+  public void subsequentMoveTest() throws InvalidAmountException {
     Role testBuyer = new Buyer();
     testBuyer.move(1000);
     testBuyer.move(750);
-    logger.fatal(testBuyer.getCurrent());
     assertEquals(250, testBuyer.getCurrent());
   }
-    
+
   @Test
-  public void limitReachedTest() {
+  public void limitReachedTest() throws InvalidAmountException {
     Role testBuyer = new Buyer();
     testBuyer.setLimit(240);
     testBuyer.move(1000);
-    logger.fatal(testBuyer.getCurrent());
     testBuyer.move(750);
-    logger.fatal(testBuyer.getCurrent());
     assertTrue(testBuyer.limitReached);
   }
-  
+
   @Test
-  public void limitNotReachedTest() {
+  public void limitNotReachedTest() throws InvalidAmountException {
     Role testBuyer = new Buyer();
     testBuyer.setLimit(300);
     testBuyer.move(1000);
-    logger.fatal(testBuyer.getCurrent());
     testBuyer.move(750);
-    logger.fatal(testBuyer.getCurrent());
     assertFalse(testBuyer.limitReached);
   }
-  
 
-  
-  
+  @Test(expected = InvalidAmountException.class)
+  public void exceptionZeroTest() throws InvalidAmountException {
+    Role testBuyer = new Buyer();
+    testBuyer.move(0);
+  }
+
+  @Test(expected = InvalidAmountException.class)
+  public void exceptionNegativeTest() throws InvalidAmountException {
+    Role testBuyer = new Buyer();
+    testBuyer.move(-12000);
+  }
+
 }

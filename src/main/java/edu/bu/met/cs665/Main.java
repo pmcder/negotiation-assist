@@ -2,6 +2,7 @@ package edu.bu.met.cs665;
 
 import java.util.Scanner;
 import memento.CareTaker;
+import roles.InvalidAmountException;
 import roles.Role;
 import roles.RoleFactory;
 import roles.Seller;
@@ -26,8 +27,8 @@ public class Main {
     CareTaker careTaker = new CareTaker();
 
     // welcome message
-    System.out.println("Welcome to Negotiation Assist\n");
-    System.out.println("I will help buyers get a low price and sellers get a high price.\n\n"
+    System.out.println("Welcome to Negotiation Assist\\n "
+        + "I will help buyers get a low price and sellers get a high price.\n\n"
         + "Are you buying or selling today ?\n\n" + "press 1 for buyer and 2 for seller\n");
 
     /*
@@ -42,7 +43,9 @@ public class Main {
     user.setLimit(sc.nextInt());
     System.out.printf("\nNegotiating will stop when you reach %d \n", user.getLimit());
     
-    //gets starting price if seller
+    /*
+     * Gets starting price from user if the user is a seller. 
+     */
     if (user.getClass() == Seller.class) {
       System.out.println("Please enter asking price: ");
       user.setCurrent(sc.nextInt());
@@ -51,14 +54,22 @@ public class Main {
     /*
      * Negotiating loop prompts user to input counterparty amount
      * and returns suggested move to user.
-     * Loop breaks when user is advised when limit is reached. 
+     * Loop breaks and a message displays when user's limit is reached. 
      */
     while (!(user.getLimitReached())) {
       System.out.println("\nEnter counterparty amount: ");
-      user.move(sc.nextInt());
-      System.out.printf("You should move to %d \n", user.getCurrent());
-      System.out.println("To undo type 'undo' else press any key to continue");
-      String u = sc.next();
+      try {
+        user.move(sc.nextInt());
+      } catch (InvalidAmountException e) {
+        user.undo(careTaker.getLastMemento());
+        System.out.printf("Amount must be positive"
+            + "Please try again."
+            + "counterparty at %d, you are at %d", (int)user.getOpposingLast(),
+            user.getCurrent());
+      }
+      System.out.printf("You should move to %d \n To undo type 'u' else press any key to continue" 
+          , user.getCurrent());
+      String u = sc.next().toLowerCase();
       if (u.contentEquals("u")) {
         user.undo(careTaker.getLastMemento());
         System.out.printf("undone! counterparty at %d, you are at %d", (int)user.getOpposingLast(),
@@ -66,6 +77,7 @@ public class Main {
       }
       careTaker.addMemento(user.setMemento());
     }
+    //message displays when limit reached
     System.out.println("\nlimit reached !!!");
   }
 }

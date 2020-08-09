@@ -5,7 +5,7 @@ import memento.RoleMemento;
 public abstract class Role {
 
   /**
-   * Represents role of the user.
+   * Represents role of party to a negotiation.
    */
 
   protected int limit; // max for buyer and min for seller
@@ -27,11 +27,12 @@ public abstract class Role {
   }
 
   /**
-   * Calculates optimal value of next move and updates next field.
+   * Calculates optimal value of next move and updates current field.
    * 
    * @param opposingCurrent counterparty's current offer.
+   * @throws InvalidAmountException TODO
    */
-  public abstract void move(double opposingCurrent);
+  public abstract void move(double opposingCurrent) throws InvalidAmountException;
 
   /**
    * Indicates if limit is a max or min.

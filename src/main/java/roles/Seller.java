@@ -2,12 +2,17 @@ package roles;
 
 public class Seller extends Role {
 
+  /**
+   * Represents the seller in a transaction.
+   * The seller is looking for the highest price from 
+   * the buyer.
+   */
   public Seller() {
     super();
   }
 
   @Override
-  public void move(double opposingCurrent) {
+  public void move(double opposingCurrent) throws InvalidAmountException {
     if (this.volleyCount == 0) {
       this.current = this.current - (this.current * .20);
       this.opposingLast = opposingCurrent;
