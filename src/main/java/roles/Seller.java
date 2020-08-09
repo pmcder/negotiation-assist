@@ -13,6 +13,9 @@ public class Seller extends Role {
 
   @Override
   public void move(double opposingCurrent) throws InvalidAmountException {
+    if (opposingCurrent < 1) {
+      throw new InvalidAmountException();
+    }
     if (this.volleyCount == 0) {
       this.current = this.current - (this.current * .20);
       this.opposingLast = opposingCurrent;

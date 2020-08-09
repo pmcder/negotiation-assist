@@ -15,6 +15,7 @@ public class Main {
   /**
    * Main method displays user menus to the console.
    * @param args not used
+   * @throws InvalidAmountException 
    */
   public static void main(String[] args) {
 
@@ -47,7 +48,7 @@ public class Main {
      * Gets starting price from user if the user is a seller. 
      */
     if (user.getClass() == Seller.class) {
-      System.out.println("Please enter asking price: ");
+      System.out.println("\nPlease enter asking price: ");
       user.setCurrent(sc.nextInt());
     }
 
@@ -56,18 +57,19 @@ public class Main {
      * and returns suggested move to user.
      * Loop breaks and a message displays when user's limit is reached. 
      */
+    
     while (!(user.getLimitReached())) {
       System.out.println("\nEnter counterparty amount: ");
       try {
         user.move(sc.nextInt());
       } catch (InvalidAmountException e) {
-        user.undo(careTaker.getLastMemento());
-        System.out.printf("Amount must be positive"
-            + "Please try again."
-            + "counterparty at %d, you are at %d", (int)user.getOpposingLast(),
-            user.getCurrent());
+        // TODO Auto-generated catch block
+        e.printStackTrace();
       }
-      System.out.printf("You should move to %d \n To undo type 'u' else press any key to continue" 
+      if (user.getLimitReached()) {
+        break;
+      }
+      System.out.printf("You should move to %d \n\nTo undo type 'u' else press any key to continue" 
           , user.getCurrent());
       String u = sc.next().toLowerCase();
       if (u.contentEquals("u")) {
