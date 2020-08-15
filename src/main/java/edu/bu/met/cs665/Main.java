@@ -28,7 +28,7 @@ public class Main {
     CareTaker careTaker = new CareTaker();
 
     // welcome message
-    System.out.println("Welcome to Negotiation Assist\\n "
+    System.out.println("Welcome to Negotiation Assist\n "
         + "I will help buyers get a low price and sellers get a high price.\n\n"
         + "Are you buying or selling today ?\n\n" + "press 1 for buyer and 2 for seller\n");
 
@@ -54,7 +54,7 @@ public class Main {
 
     /*
      * Negotiating loop prompts user to input counterparty amount
-     * and returns suggested move to user.
+     * and displays suggested move to user.
      * Loop breaks and a message displays when user's limit is reached. 
      */
     
@@ -62,9 +62,13 @@ public class Main {
       System.out.println("\nEnter counterparty amount: ");
       try {
         user.move(sc.nextInt());
+        if(user.getVolleyCount() == 1) {
+          careTaker.addMemento(user.setMemento());
+        }
       } catch (InvalidAmountException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+        System.out.println("You must enter a positive value");
+        System.out.printf("Resetting. counterparty at %d, you are at %d", (int)user.getOpposingLast(),
+            user.getCurrent());
       }
       if (user.getLimitReached()) {
         break;

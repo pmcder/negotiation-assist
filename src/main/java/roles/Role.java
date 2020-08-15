@@ -16,6 +16,14 @@ public abstract class Role {
 
   protected int volleyCount; // stores number of moves made
 
+  public int getVolleyCount() {
+    return volleyCount;
+  }
+
+  public void setVolleyCount(int volleyCount) {
+    this.volleyCount = volleyCount;
+  }
+
   protected double opposingLast; // last move by other opposing role
 
   protected double initial; // starting move amount

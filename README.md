@@ -1,6 +1,13 @@
-# Project Template
+# Project Description
 
-This is a Java Maven Project Template
+This project is an application to assist the user in haggling. It helps buyers buy low and sellers sell high. It is useful for yard sales, real estate, insurance, business, and even government.
+This release is optimized for an insurance claims negotiation.
+
+my design goals are expandablility 
+
+design patterns
+My project uses memento pattern. The memento pattern allows the user to undo a move. It also resets the users move in  the event of an exception. 
+
 
 
 # How to compile the project

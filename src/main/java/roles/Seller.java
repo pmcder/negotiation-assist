@@ -20,6 +20,9 @@ public class Seller extends Role {
       this.current = this.current - (this.current * .20);
       this.opposingLast = opposingCurrent;
       this.volleyCount++;
+      if (this.current <= this.limit) {
+        this.limitReached = true;
+      }
     } else {
       this.current = this.current - (((opposingCurrent - this.opposingLast) / opposingCurrent) * this.current);
       this.volleyCount++;
