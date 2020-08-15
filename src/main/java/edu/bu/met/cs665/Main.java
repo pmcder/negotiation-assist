@@ -16,7 +16,6 @@ public class Main {
    * Main method displays user menus to the console.
    * 
    * @param args not used
-   * @throws InvalidAmountException
    */
   public static void main(String[] args) {
 

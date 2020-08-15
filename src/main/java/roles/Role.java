@@ -97,6 +97,10 @@ public abstract class Role {
     this.opposingInitial = opposingInitial;
   }
 
+  /**
+   * Saves current values to memento object.
+   * @return memento object with current values.
+   */
   public RoleMemento setMemento() {
     RoleMemento roleMemento = new RoleMemento(this.limit, this.current, this.limitReached, this.volleyCount,
         this.opposingLast, this.initial, this.opposingInitial);
