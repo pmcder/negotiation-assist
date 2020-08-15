@@ -3,9 +3,8 @@ package roles;
 public class Seller extends Role {
 
   /**
-   * Represents the seller in a transaction.
-   * The seller is looking for the highest price from 
-   * the buyer.
+   * Represents the seller in a transaction. The seller is looking for the highest
+   * price from the buyer.
    */
   public Seller() {
     super();

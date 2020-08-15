@@ -96,14 +96,16 @@ public abstract class Role {
   public void setOpposingInitial(double opposingInitial) {
     this.opposingInitial = opposingInitial;
   }
-  
+
   public RoleMemento setMemento() {
-    RoleMemento roleMemento = new RoleMemento(this.limit, this.current, this.limitReached, this.volleyCount, this.opposingLast, this.initial, this.opposingInitial);
+    RoleMemento roleMemento = new RoleMemento(this.limit, this.current, this.limitReached, this.volleyCount,
+        this.opposingLast, this.initial, this.opposingInitial);
     return roleMemento;
   }
-  
+
   /**
    * Restores role state to a previous state.
+   * 
    * @param roleMemento memento object to restore role state to.
    */
   public void undo(RoleMemento roleMemento) {
@@ -115,7 +117,5 @@ public abstract class Role {
     this.initial = roleMemento.getInitial();
     this.opposingInitial = roleMemento.getOpposingInitial();
   }
-  
-  
 
 }
