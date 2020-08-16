@@ -68,8 +68,6 @@ public class Main {
         }
       } catch (InvalidAmountException e) {
         System.out.println("You must enter a positive value");
-        System.out.printf("Resetting. counterparty at %d, you are at %d", (int) user.getOpposingLast(),
-            user.getCurrent());
       }
       if (user.getLimitReached()) {
         break;

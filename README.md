@@ -3,11 +3,16 @@
 This project is an application to assist the user in haggling. It helps buyers buy low and sellers sell high. It is useful for yard sales, real estate, insurance, business, and even government.
 This release is optimized for an insurance claims negotiation.
 
-my design goals are expandablility 
+My primary design goal was to create a way for a user to perform an undo action. I have achieved that goal through the memento pattern. Another goal is flexibility. Memento pattern also supports that goal as the memento and care taker classes could be used with a GUI or other client code. In this release the client code is the main class which contains the console user interface logic.
 
-design patterns
-My project uses memento pattern. The memento pattern allows the user to undo a move. It also resets the users move in  the event of an exception. 
+I have avoided duplicated through inheritance and polymorphism. Most of the code for the buyer and seller objects is in the abstract superclass Role. Buyer and Seller classes inherit from that and implement their own unique move() algorithms.
 
+The focus of this project is the memento pattern. The core negotiating algorithm works but
+is a work in progress. For best results a suggested start for buyer and seller is one in which the buyer's staring offer is about 10 % of the seller's initial asking price. That spread is typcial of an insurance claim settlement negotaiation or a congressional budget negotationating. The recent covid stimmulus negotation was 950b to 150b. 
+
+#UML
+
+![Class Diagram](mementoUML.png)
 
 
 # How to compile the project
