@@ -15,6 +15,10 @@ public class Driver {
     // TODO Auto-generated constructor stub
   }
 
+  /**
+   * Main method executes begins command line user interface.
+   * @param args not used.
+   */
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in,"UTF-8");
