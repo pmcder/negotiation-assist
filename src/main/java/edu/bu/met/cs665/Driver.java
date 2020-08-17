@@ -1,5 +1,7 @@
 package edu.bu.met.cs665;
 
+import java.nio.charset.Charset;
+import java.util.Locale;
 import java.util.Scanner;
 import memento.CareTaker;
 import roles.InvalidAmountException;
@@ -15,7 +17,8 @@ public class Driver {
 
   public static void main(String[] args) {
 
-    Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in,"UTF-8");
+    
 
     Role user = null;
 
@@ -39,7 +42,7 @@ public class Driver {
      */
     System.out.printf("Please enter the %s price you are willing to accept ", user.getLimitType());
     user.setLimit(sc.nextInt());
-    System.out.printf("\nNegotiating will stop when you reach %d \n", user.getLimit());
+    System.out.printf("%nNegotiating will stop when you reach %d %n", user.getLimit());
 
     /*
      * Gets starting price from user if the user is a seller.
@@ -68,8 +71,8 @@ public class Driver {
       if (user.getLimitReached()) {
         break;
       }
-      System.out.printf("You should move to %d \n\nTo undo type 'u' else press any key to continue", user.getCurrent());
-      String u = sc.next().toLowerCase();
+      System.out.printf("You should move to %d %n%nTo undo type 'u' else press any key to continue", user.getCurrent());
+      String u = sc.next().toLowerCase(Locale.US);
       if (u.contentEquals("u")) {
         user.undo(careTaker.getLastMemento());
         System.out.printf("undone! counterparty at %d, you are at %d", (int) user.getOpposingLast(), user.getCurrent());
