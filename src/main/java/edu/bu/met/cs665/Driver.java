@@ -1,6 +1,5 @@
 package edu.bu.met.cs665;
 
-import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Scanner;
 import memento.CareTaker;
