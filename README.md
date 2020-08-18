@@ -12,6 +12,10 @@ I have avoided duplicated code through inheritance and polymorphism. Most of the
 The focus of this project is the memento pattern. The core negotiating algorithm works but
 is a work in progress. For best results a suggested start for buyer and seller is one in which the buyer's staring offer is about 10 % of the seller's initial asking price. That spread is typcial of an insurance claim settlement negotiation or a congressional budget negotiating. In the recent covid stimulus negotiation one party started at 950 billion and the other at 150 billion. 
 
+# Github Link
+
+[link to my final project Github repo](https://github.com/metcs/met-cs665-assignment-project-pmcder.git)
+
 # UML
 
 ![Class Diagram](mementoUML.png)
