@@ -1,14 +1,16 @@
 # Project Description
 
 This project is an application to assist the user in haggling. It helps buyers buy low and sellers sell high. It is useful for yard sales, real estate, insurance, business, and even government.
-This release is optimized for an insurance claims negotiation.
+This release is optimized for an insurance claims negotiation. The software design pattern that we did not study and that I have used in my project is the memento pattern. I also used the factory method in my project.
+
+The use case of memento pattern here is the undo feature in the console based user interface. The application promts the user to chose a role: either buyer or seller. If the user is the seller they must enter a starting price. The user is then prompted to enter the other party's counter offer amount and suggests what the user's optimal next counter amount should be. After each exchange, the user can press "u" to undo and application will undo the last exchange. 
 
 My primary design goal was to create a way for a user to perform an undo action. I have achieved that goal through the memento pattern. Another goal is flexibility. Memento pattern also supports that goal as the memento and care taker classes could be used with a GUI or other client code. In this release the client code is the main class which contains the console user interface logic.
 
-I have avoided duplicated through inheritance and polymorphism. Most of the code for the buyer and seller objects is in the abstract superclass Role. Buyer and Seller classes inherit from that and implement their own unique move() algorithms.
+I have avoided duplicated code through inheritance and polymorphism. Most of the code for the buyer and seller objects is in the abstract superclass Role. Buyer and Seller classes inherit from that and implement their own unique move() algorithms.
 
 The focus of this project is the memento pattern. The core negotiating algorithm works but
-is a work in progress. For best results a suggested start for buyer and seller is one in which the buyer's staring offer is about 10 % of the seller's initial asking price. That spread is typcial of an insurance claim settlement negotaiation or a congressional budget negotationating. The recent covid stimmulus negotation was 950b to 150b. 
+is a work in progress. For best results a suggested start for buyer and seller is one in which the buyer's staring offer is about 10 % of the seller's initial asking price. That spread is typcial of an insurance claim settlement negotiation or a congressional budget negotiating. In the recent covid stimulus negotiation one party started at 950 billion and the other at 150 billion. 
 
 # UML
 
@@ -41,7 +43,7 @@ mvn clean compile assembly:single
 mvn -q clean compile exec:java -Dexec.executable="edu.bu.met.cs665.Main" -Dlog4j.configuration="file:log4j.properties"
 ```
 
-We recommand the above command for running the project. 
+We recommend the above command for running the project. 
 
 Alternativly, you can run the following command. It will generate a single jar file with all of the dependencies. 
 
