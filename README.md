@@ -12,6 +12,14 @@ I have avoided duplicated code through inheritance and polymorphism. Most of the
 The focus of this project is the memento pattern. The core negotiating algorithm works but
 is a work in progress. For best results a suggested start for buyer and seller is one in which the buyer's staring offer is about 10 % of the seller's initial asking price. That spread is typcial of an insurance claim settlement negotiation or a congressional budget negotiating. In the recent covid stimulus negotiation one party started at 950 billion and the other at 150 billion. 
 
+# running application
+
+Application can be ran from the main method in Driver.java in edu.bu.met.cs655 package.
+If you chose to be the buyer, a suggested input for buyer starting price is 10000 with a limit of 7000
+If you chose seller the suggested limit is 3000 and the suggested counterparty's first offer is 10000 .
+at or around those figures, the suggested counterparty's amounts should move 3-500 increments. 
+The application works with other figures but those will give you a good sampling of it in action.
+
 # Github Link
 
 [link to my final project Github repo](https://github.com/metcs/met-cs665-assignment-project-pmcder.git)
