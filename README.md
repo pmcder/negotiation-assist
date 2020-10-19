@@ -1,6 +1,13 @@
-# Project Template
+#Project Description
 
-This is a Java Maven Project Template
+I made this project for my software design patterns class as an example of the memento pattern.
+
+This project is an application to assist the user in haggling. It helps buyers buy low and sellers sell high. It is useful for yard sales, real estate, insurance, business, and even government. This release is optimized for an insurance claims negotiation. 
+
+
+The use case of memento pattern here is the undo feature in the console based user interface. The application promts the user to chose a role: either buyer or seller. If the user is the seller they must enter a starting price. The user is then prompted to enter the other party's counter offer amount and suggests what the user's optimal next counter amount should be. After each exchange, the user can press "u" to undo and application will undo the last exchange.
+
+My primary design goal was to create a way for a user to perform an undo action. I have achieved that goal through the memento pattern. Another goal is flexibility. Memento pattern also supports that goal as the memento and care taker classes could be used with a GUI or other client code. In this release the client code is the main class which contains the console user interface logic.
 
 
 # How to compile the project
